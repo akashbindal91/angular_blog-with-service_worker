@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="page-header">
+    <h3>READ AND COMMENT</h3>
+  </div>
+	<input type = "hidden" ng-model = "val.id" ng-init = "getall(val)">
+	
+	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- its for the commenting system -->
+	<div>
+		<!-- created for dividing the view thing -->
+		<div id = "wrap">
+
+			<!-- the left column for the commenting thing -->
+			<div>
+				<!-- the left column -->
+				<div id = "left_col">
+					<div>
+						<!-- <p><input type = "hidden" ng-model = "comment_id"></p> -->
+						<!-- <p><h6 ng-bind	= 	"comment_id" 		></h6></p> -->
+						<p>
+							<p>
+								<strong>CATEGORY:</strong>	<p  ng-bind	=	"comment_category" 	></p>
+							</p>
+							<p>
+								<strong>TITLE:</strong>	<p><h2 ng-bind	=	"comment_title"		></h2></p>
+							</p>
+							<p>
+								<strong>Written BY:</strong><p ng-bind	=	"comment_writer"	></p>
+							</p>
+							<p>
+								<strong>ARTICLE:</strong>	<p  ng-bind-html	=	"comment_article"	></p>
+							</p>
+							
+						</p>
+					</div>
+					<br>
+					<!-- <input type = "hidden" ng-model = "read.comment_category" ng-init = "getrelatedarticles(read)"/> -->
+					<br>
+					<div>
+						<p> YOUR COMMENTS HERE </p>
+						
+						<p><input type = "hidden" class="form-control" ng-model = "comment.sstryId"></p>
+						
+						<p><input type = "text" ng-model = "comment.comment_title" class="form-control" placeholder = "YOUR TITLE FOR COMMENT in 200 words"></p>
+						
+						<p><textarea ng-model = "comment.comment_describtion"  class="form-control" rows = "10" placeholder = "YOUR COMMENT IN BRIEF in 200 words"></textarea></p>
+						
+						<p><input type = "button" value= "SUBMIT"  class="btn btn-primary btn-block" ng-click = "commentOnArticle(comment)" ></p>
+					
+					</div>
+
+ 					<div class="panel-group">
+    					<div class="panel panel-default">
+      						<div class="panel-heading"><h3 >RELATED STORIES YOU MIGHT LIKE </h3></div>
+      						<div class="panel-body">
+      							<div ng-repeat = "article_detail in article_categories " ng-click = "commenting(article_detail)" >
+									<div class="col-sm-3">
+										<p>
+											<strong>{{article_detail.title | uppercase}}</strong>
+											<br>
+											{{article_detail.category}}
+										</p>
+									</div>
+								</div>
+      						</div>
+    					</div>
+					</div>
+				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				
+				<!-- places for the random stories of the same categories -->
+				<!-- <div >
+					<div class="row">
+	    				<tr ng-repeat="article_detail in article_categories ">
+	    				<div class="col-sm-3" style="background-color:lavenderblush;">{{article_detail.u_id}}</div>
+	  				</div>
+  				 </div> -->
+<!-- for the categs -->
+<!-- <div>
+	<table>
+	  <tc ng-repeat="article_detail in article_categories">
+	    <td>{{ article_detail.u_id }}</td>
+	    <td>{{ article_detail.title }}</td>
+	  </tc>
+	</table>
+</div> -->
+
+				<!--  <div class="row" ng-repeat = "article_detail in article_categories "> -->
+					<!-- <div class="col-sm-3">{{article_detail.u_id}}<br>{{article_detail.title}}<br>{{article_detail.writer}}</div> -->
+					
+				<!-- the right column for the comments showing -->
+				<div id = "right_col"  ng-show = "comment_values" >
+<!-- 					<input type = "hidden" ng-model = "val.id" ng-init = "getComments(val)"> -->
+<!-- 					<input type = "hidden" ng-model = "val.id" ng-init = "getData(val)"> -->
+				<!-- the right column -->
+				<p><h2>PREVIOUS COMMENTS</h2></p>
+					<table class="table table-hover">
+						<!-- <tr>
+							<th><h5>TITLE</h5></th>
+							<th><h5>Comment</h5></th>
+							<th><h5>PUBLISHED</h5></th>
+						</tr> -->
+						<tr ng-repeat="article_comment in article_comments ">
+							<td>
+								<p><h3>{{article_comment.comment_title | uppercase}}</h3></p>
+								<p>{{article_comment.comment_is}}</p>
+								<p><h6>{{article_comment.commented_on}}</h6></p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

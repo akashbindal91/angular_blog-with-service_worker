@@ -1,0 +1,24 @@
+<div class="container">
+	
+	<div class="page-header">
+		<h3>UPDATE ARTICLE</h3>
+	</div>
+
+	<input type = "hidden" ng-model = "uppi.supr_id" ng-init = "getUpdateForSomething(uppi)">
+	
+	<form name = "updateForm">
+		
+		<div ng-show="update_id">
+			<p><input type = "text" ng-model = "update.u_id" placeholder = "ID"></p>
+		</div>
+		
+		<p>WRITER NAME<input type = "text" ng-model = "update.blog_writer" class="form-control" placeholder = "WRITER NAME" disabled></p>
+		<p>ARTICLE TITLE<input type = "text" ng-model = "update.blog_title" class="form-control" placeholder = "TITLE" disabled></p>
+		<!-- <p>ARTICLE<textarea ng-model = "update.blog_article" class="form-control" rows = "10" placeholder = "ARTICLE" required></textarea></p>
+ -->
+		<p><textarea ng-model = "update.blog_article"  id="blog_article" name="blog_article"></textarea></p>
+		<p><input type = "button" value = "SUBMIT" class="btn btn-primary btn-block"  ng-model = "blog_submit" ng-click = "blog_updateForm(update)"></p>
+	
+	</form>
+
+</div>

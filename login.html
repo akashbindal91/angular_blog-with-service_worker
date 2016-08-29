@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-header">
+    <h3>LOGIN HERE</h3>
+  </div>
+	<form name = "loginForm">
+
+		<p>EMAIL<input type = "email"  ng-model = "log.email"  class="form-control" placeholder = "" required></p>
+
+		<p>PASSWORD<input type = "password"  ng-model = "log.password"  class="form-control" placeholder = "" required></p>
+		
+		<input type = "button"  value = "submit"  class="btn btn-primary btn-block" ng-model = "signup_submit" ng-click = "lookup_login(log)">
+
+	</form>	 
+</div>
