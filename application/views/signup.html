@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="page-header">
+    <h3>SIGNUP HERE</h3>
+  </div>
+	<form name = "signupForm">
+
+		<p>NAME<input type = "text" ng-model = "signup.user_name"  class="form-control" required></p>
+
+		<p>EMAIL<input type = "email"  ng-model = "signup.email"  class="form-control" required></p>
+
+		<p>PASSWORD<input type = "password"  ng-model = "signup.password"  class="form-control" required></p>
+		
+		<input type = "button"  value = "submit"  class="btn btn-primary btn-block" ng-model = "signup_submit" ng-click = "lookup_signup(signup)">
+
+	</form>	 
+</div>

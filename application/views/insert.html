@@ -1,0 +1,35 @@
+<!-- <div ng-init = "readAll()" > -->
+<div class="container">	
+  <div class="page-header">
+    <h3>INSERT ARTICLE</h3>
+  </div>
+	<form name = "insertForm">
+		<select class="form-control" ng-model="insert.blog_categ" required>
+		    <option value="" disabled>
+		    <option value="action">Action
+		    <option value="technology">Technology
+		    <option value="history">History
+		    <option value="animals">Animals
+		    <option value="travel">Travel
+		    <option value="lovestory">Love Story
+		</select>
+		<!-- <p>
+			<textarea ckeditor="editorOptions" ng-model="modelName"></textarea>
+		</p> -->
+		<p>WRITOR NAME<input type = "text" ckeditor="blog_writer" ng-model = "insert.blog_writer"  class="form-control" placeholder = "WRITER NAME" required></p>
+
+		<p>WRITOR TITLE<input type = "text" ckeditor="blog_title" ng-model = "insert.blog_title"  class="form-control" placeholder = "TITLE in 200 words" required></p>
+
+				<p>WRITOR ARTICLE<textarea ckeditor="blog_article" ng-model = "insert.blog_article" id = "blog_article" name = 'blog_article' class="form-control"  rows = "7" placeholder = "ARTICLE in 200 words" required></textarea></p>
+				<!-- <textarea name="editor1" id="editor1" rows="10" cols="80">
+		                This is my textarea to be replaced with CKEditor.
+		            </textarea> -->
+
+<!-- 		<p>WRITOR ARTICLE<textarea ng-model = "insert.blog_article"  class="form-control"  ></textarea></p>
+ -->
+		<input type = "button"  value = "submit"  class="btn btn-primary btn-block" ng-model = "blog_submit" ng-click = "blog_insertForm(insert)">
+		<!-- <textarea name="editor1"></textarea> -->
+	</form>
+	
+</div>
+<!-- </div> -->
