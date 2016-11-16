@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CodeIgniter Rest Server
 
 A fully RESTful server implementation for CodeIgniter using one library, one
@@ -202,3 +203,7 @@ Pull Requests are the best way to fix bugs or add features. I know loads of you 
 contribute if you have improvements to be made and I'll keep releasing versions over time.
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/chriskacerguis/codeigniter-restserver/master/LICENSE)
+=======
+# angular_blog-with-service_worker
+ngRoute-ngResource-ngSanitize-ngCookies are also used
+>>>>>>> bccf1bcdcd3195c410b8a0ad105c255880742e32
