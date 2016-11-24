@@ -76,9 +76,15 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+<<<<<<< HEAD
 	'username' => 'root',
 	'password' => 'empire',
 	'database' => 'witty_blog_angular',
+=======
+	'username' => '',
+	'password' => '',
+	'database' => '',
+>>>>>>> 22d52905be7df7bfd47b4cea30172f3113467297
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
