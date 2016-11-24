@@ -148,8 +148,17 @@ app.controller (  'signupController', function ($scope,$http,$location,$routePar
 //===================================================================================
 // ARTICLE CONTROLLER
 //===================================================================================
+app.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; 
+        return input.slice(start);
+    }
+});
+
 app.controller (  'articleController', function ( $scope,$http,$location,UserGetAll,$routeParams,$cookies )
 {
+	$scope.pageSize = 10;
+    $scope.currentPage = 0;
 	$scope.welcome = false;
 	$scope.login = true;
 
@@ -159,10 +168,26 @@ app.controller (  'articleController', function ( $scope,$http,$location,UserGet
 		{
 			self.original = user;
 			$scope.response = new UserGetAll(self.original );
-			$scope.article_details = $scope.response.results;
 			getallcategories();
+
+			// PAGINATION STARTS
+			var dats = $scope.response.results;
+			pagination(dats);
 		})
 	}
+
+	function pagination(dats) {
+        var res_len = dats.length;
+
+        $scope.numberOfPages = function() {
+            $scope.page_size = Math.ceil( res_len / $scope.pageSize); 
+            return  $scope.page_size;             
+        }
+        for (var i=0; i < res_len; i++) {
+            $scope.article_details = dats;
+        }
+    }
+    // PAGINATION ENDS
 
 	function getallcategories()
 	{

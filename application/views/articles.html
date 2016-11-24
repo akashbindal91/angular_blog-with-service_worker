@@ -1,4 +1,6 @@
 <div ng-init = "getArticles()">
+	
+
 	<!-- <div class="container"> -->
 	<select class="form-control" ng-model="article_category.selectedCategory" ng-click = "getCategoryData(article_category)" placeholder = "SELECT THE CATEGORY YOU WANT TO READ" >
 		
@@ -6,10 +8,13 @@
 		<!-- <p><strong>{{article_detail.category | uppercase}}</strong></h6></p> -->
 	</select>
 				
-`
-
-
 	<h2><strong>CLICK TO READ YOUR ARTICLE</strong></h2>
+<!-- pagination button -->
+	<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="btn btn-primary"> Previous </button>
+      {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= page_size - 1" ng-click="currentPage=currentPage+1" class="btn btn-primary"> Next </button>
+
+    <!-- pagination button-->
 
 		<table class="table table-hover">
 			<!-- <tc>
@@ -18,7 +23,11 @@
 				<th>ARTICLE</th>
 				<th>WRITOR</th>
 			</tc> -->
-			<tr ng-repeat="article_detail in article_details " ng-click = "commenting(article_detail)">
+
+
+			<!--REQUIRED FOR PAGINATION -->
+			<tr ng-repeat="article_detail in article_details | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click = "commenting(article_detail) " >
+				<!-- PAGINATION -->
 				<td>
 					<p> <strong>{{article_detail.title | uppercase}} </strong></p>
 					<p>  <h6>WRITTEN BY: {{article_detail.writer}}  <strong>{{article_detail.category | uppercase}}</strong></h6></p>
