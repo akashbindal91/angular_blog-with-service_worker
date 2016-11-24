@@ -77,9 +77,9 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 <<<<<<< HEAD
-	'username' => 'root',
-	'password' => 'empire',
-	'database' => 'witty_blog_angular',
+	'username' => '',
+	'password' => '',
+	'database' => '',
 =======
 	'username' => '',
 	'password' => '',
