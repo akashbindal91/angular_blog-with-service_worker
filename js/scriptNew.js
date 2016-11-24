@@ -148,6 +148,8 @@ app.controller (  'signupController', function ($scope,$http,$location,$routePar
 //===================================================================================
 // ARTICLE CONTROLLER
 //===================================================================================
+
+// needed for pagination
 app.filter('startFrom', function() {
     return function(input, start) {
         start = +start; 
